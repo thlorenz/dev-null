@@ -1,21 +1,37 @@
-# dev-null-writable
-[![build status](https://secure.travis-ci.org/thlorenz/dev-null-writable.png)](http://travis-ci.org/thlorenz/dev-null-writable)
+# dev-null [![build status](https://secure.travis-ci.org/thlorenz/dev-null.png)](http://travis-ci.org/thlorenz/dev-null)
 
-/dev/null for node streams
+`/dev/null` for node streams
+
+Use it whenever you need to interrupt stream flow for instance if you want to log the state of a stream instead of its
+output.
 
 ```js
-// TODO
+// without devnull
+var numbers = require('../test/fixtures/number-readable')
+
+numbers({ to: 2 })
+  .on('data', function (d) { console.log(d.toString()) });
+// => 
+// 0
+// 1
+// 2
 ```
 
-## Status
+```js
+// piping into devnull
+var devnull = require('dev-null');
+var numbers = require('../test/fixtures/number-readable');
 
-Nix, Nada, Nichevo, Nothing --> go away!
+numbers({ to: 2 })
+  .pipe(devnull())
+  .on('data', function (d) { console.log(d.toString()) });
+
+=> 
+```
+
 ## Installation
 
-    npm install dev-null-writable
-
-## API
-
+    npm install dev-null
 
 ## License
 
