@@ -1,6 +1,6 @@
 {
   "name": "dev-null",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "/dev/null for node streams",
   "main": "index.js",
   "scripts": {
