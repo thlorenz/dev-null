@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test-main": "tap test/*.js",
-    "test-0.8": "nave use 0.8 npm run test-main",
     "test-0.10": "nave use 0.10 npm run test-main",
-    "test-all": "npm run test-main && npm run test-0.8 && npm run test-0.10",
+    "test-all": "npm run test-main && npm run test-0.10",
     "test": "if [ -e $TRAVIS ]; then npm run test-all; else npm run test-main; fi"
   },
   "repository": {
@@ -32,6 +31,6 @@
     "url": "https://github.com/thlorenz/dev-null/blob/master/LICENSE"
   },
   "engine": {
-    "node": ">=0.6"
+    "node": ">=0.10"
   }
 }
