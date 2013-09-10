@@ -26,7 +26,7 @@ numbers({ to: 2 })
   .pipe(devnull())
   .on('data', function (d) { console.log(d.toString()) });
 
-=> 
+// => (no output)
 ```
 
 ## Installation
