@@ -3,7 +3,7 @@
 var util         =  require('util')
   , stream       =  require('stream')
   , Writable     =  stream.Writable
-  , setImmediate =  setImmediate || function (fn) { setTimeout(fn, 0) }
+  , _setImmediate =  setImmediate || function (fn) { setTimeout(fn, 0) }
   ;
 
 module.exports = DevNull;
@@ -18,5 +18,5 @@ function DevNull (opts) {
 }
 
 DevNull.prototype._write = function (chunk, encoding, cb) {
-  setImmediate(cb);
+  _setImmediate(cb);
 }
